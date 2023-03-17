@@ -35,6 +35,7 @@ int main()
 
 void trex()
 {
+
     char choice;
     Sleep(1000);
     printf("  You lost consciousness when consciousness returned you saw a T-REX ! is running towards you oh my lord you must react immediately \n");
@@ -60,7 +61,7 @@ void trex()
         lyf=lyf-1;
         Sleep(1000);
         printf("\n  ************************* \n");
-        printf("  Life remaining is %d\n",lyf);
+        printf("\n  Life remaining is %d\n",lyf);
         printf("  When you open your eyes you saw T rex staring at you and you are at edge of the cliff");
         printf("\n");
         goto sub;
@@ -69,6 +70,7 @@ void trex()
     {
         printf("  You started running T-rex keep following you you were so panicked and nervous\n");
         printf("  that you lost the trail the path you selected and guess what you reached the end of a cliff\n");
+        Sleep(1000);
 
     }
     else
@@ -90,12 +92,23 @@ void trex()
     scanf(" %c",&choice);
     if(choice=='a')
     {
-        printf("Well Fighting a trex is a bad idea i guess You fought taht big guy with a KITCHEN KNIFE! Obviously you lost the battle\n");
+        printf("  Well Fighting a trex is a bad idea i guess You fought that big guy with a KITCHEN KNIFE! Obviously you lost the battle\n");
+        lyf = lyf-1;
+        printf("\n  Life remaining %d \n",lyf);
+        Sleep(1000);
+        printf("\n  When the T rex was almost there to eat you your time machine started Lucky guy you were shifted to new era\n");
+        printf("\n  PRESS ANY KEY TO CONTINUE\n");
+        getch();
+        system("cls");
 
     }
     else if(choice=='b')
     {
-        printf("bye");
+        printf("  Well you jump off that is the worst decision ever but I guess you have pretty solid luck\n  All of a sudden the time machine starts and you got teleported to a new era!\n");
+        Sleep(500);
+        printf("\n  PRESS ANY KEY TO CONTINUE\n");
+        getch();
+        system("cls");
     }
 
     else
