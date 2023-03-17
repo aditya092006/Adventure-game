@@ -5,6 +5,7 @@
 int lyf=3;
 
 void trex();
+void egypt();
 int main()
 {
     printf("\n");
@@ -28,6 +29,8 @@ int main()
 
 
     trex();
+    egypt();
+
 
     return 0;
 
@@ -122,4 +125,26 @@ void trex()
 }
 
 
+void egypt()
+{
+    printf("\n  You travel to an unknown era but the place looks like Egyt assuming by looking at that HUGE pyramid \n");
+    printf(" ENTER KEY TO CONTINUE \n");
+    getch();
+    printf("\n");
 
+        int i,j,n=50;
+        for(i=1;i<=n;i++){
+            for(j=1;j<=2*n-1;j++){
+
+                    if(j>=n-(i-1) && j<=n+(i-1)){
+                        printf("*");
+            }
+            else
+            printf(" ");
+
+        }
+        printf("\n");
+    }
+
+
+}
