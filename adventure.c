@@ -90,7 +90,8 @@ void trex()
     scanf(" %c",&choice);
     if(choice=='a')
     {
-        printf("yo");
+        printf("Well Fighting a trex is a bad idea i guess You fought taht big guy with a KITCHEN KNIFE! Obviously you lost the battle\n");
+
     }
     else if(choice=='b')
     {
@@ -106,5 +107,6 @@ void trex()
 
     }
 }
+
 
 
