@@ -22,7 +22,7 @@ int main()
     printf("\n");
     Sleep(1000);
     printf("  I guess we are out of energy we might stop during our journey, Emergency landing mode activated @#$@#$@# BEEEP BOOOOP BEEEP\n");
-    printf("  press a key to continue \n");
+    printf("\n  press a key to continue \n");
     getch();
 
     system("cls"); // clrscr but give command to cmd as "cls" = clrscr
@@ -44,7 +44,9 @@ void trex()
     printf("  You lost consciousness when consciousness returned you saw a T-REX ! is running towards you oh my lord you must react immediately \n");
     printf("\n");
     Sleep(1000);
+
     start:
+
     printf("  You have two options\n");
     printf("\n");
     Sleep(1000);
@@ -67,7 +69,7 @@ void trex()
         printf("\n  Life remaining is %d\n",lyf);
         printf("  When you open your eyes you saw T rex staring at you and you are at edge of the cliff");
         printf("\n");
-        goto sub;
+
     }
     else if(choice=='b')
     {
@@ -84,7 +86,9 @@ void trex()
         goto start;
     }
     printf("\n");
+
     sub:
+
     printf("  Now you have two options\n");
     printf("  ****************************************\n");
     printf("\n");
@@ -128,11 +132,11 @@ void trex()
 void egypt()
 {
     printf("\n  You travel to an unknown era but the place looks like Egyt assuming by looking at that HUGE pyramid \n");
-    printf(" ENTER KEY TO CONTINUE \n");
-    getch();
+    printf("\n");
+    Sleep(1500);
     printf("\n");
 
-        int i,j,n=50;
+        int i,j,n=50,ans;
         for(i=1;i<=n;i++){
             for(j=1;j<=2*n-1;j++){
 
@@ -145,6 +149,20 @@ void egypt()
         }
         printf("\n");
     }
+
+printf("\n  you wandered around and suddenly a guard spotted you he made a different hand sign but u won't understand it very well\n");
+printf("  so you just shown a victory sign and started leaving the guard got raged he locked your hands and took you to the pyramid\n");
+printf("  He took you to the leader, surprisingly leader knew the modern language a bit so he asked you 3 quick math questions\n");
+printf("  if you can solve you will be set free or else you will lose 1 life in each wrong answer\n");
+printf("\n  PRESS ANY KEY TO CONTINUE\n");
+getch();
+system("cls");
+
+printf("  LETS BEGIN HAHAHAHA!! \n")
+
+printf("  *************************************************************************************************\n");
+printf("\n  Q1 ) Look at this series: 53, 53, 40, 40, 27, 27, … What number should come next? \n");
+scanf(" %d",&ans);
 
 
 }
