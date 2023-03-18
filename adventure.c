@@ -158,11 +158,17 @@ printf("\n  PRESS ANY KEY TO CONTINUE\n");
 getch();
 system("cls");
 
-printf("  LETS BEGIN HAHAHAHA!! \n")
+printf("  LETS BEGIN HAHAHAHA!! \n");
 
 printf("  *************************************************************************************************\n");
 printf("\n  Q1 ) Look at this series: 53, 53, 40, 40, 27, 27, … What number should come next? \n");
 scanf(" %d",&ans);
+if(ans==14)
+    printf("\n  VERY WELL! time for new question \n");
 
 
+else{
+    lyf=lyf-1;
+    printf("\n  LIFE REAMINING IS %d\n",lyf);
+}
 }
