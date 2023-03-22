@@ -6,8 +6,12 @@ int lyf=3;
 
 void trex();
 void egypt();
+void lost();
+void Rome();
+void Alien();
 int main()
 {
+    char choice;
     printf("\n");
     printf("  It's the year 2023 and now a scientist named Mr William sausage has created a time machine you are selected as a time");
     printf("\n");
@@ -31,6 +35,23 @@ int main()
     trex();
     egypt();
 
+    Again:
+
+    printf("\n  I dont want you to stay here you are more smarter than i thought please leave this era i have my allies in Roman era and Alien era\n");
+    printf("  \n***************************************************************************\n");
+    printf("  a) Roman Era\n");
+    printf("  b) Alien Era \n");
+    scanf(" %c",&choice);
+    if(choice=='a')
+        Rome();
+    else if(choice=='b')
+        Alien();
+    else{
+        printf("  Invalid input\n");
+        Sleep(2000);
+        system("cls");
+        goto Again;
+    }
 
     return 0;
 
@@ -161,7 +182,8 @@ system("cls");
 printf("  LETS BEGIN HAHAHAHA!! \n");
 
 printf("  *************************************************************************************************\n");
-printf("\n  Q1 ) Look at this series: 53, 53, 40, 40, 27, 27, … What number should come next? \n");
+Q1:
+printf("\n  Q1 ) Look at this series: 53, 53, 40, 40, 27, 27,... What number should come next? \n");
 scanf(" %d",&ans);
 if(ans==14)
     printf("\n  VERY WELL! time for new question \n");
@@ -170,5 +192,65 @@ if(ans==14)
 else{
     lyf=lyf-1;
     printf("\n  LIFE REAMINING IS %d\n",lyf);
+    if(lyf==0){
+        lost();
+        exit(0);
+    }
+    else{goto Q1;}
+
 }
+
+Q2:
+printf("\n  Q2)  WHAT IS 289*123? \n");
+scanf(" %d",&ans);
+if(ans==35547)
+    printf("\n  WAIT YOU USED CALCULATOR!!! WELL NVM NEXT QUESTION!!!! \n");
+
+
+else{
+    lyf=lyf-1;
+    printf("\n  LIFE REAMINING IS %d\n",lyf);
+    if(lyf==0){
+        lost();
+        exit(0);
+    }
+    else{goto Q2;}
+
+}
+
+Q3:
+printf("\n last this one is easy what is 8/2(2+2)  \n");
+scanf(" %d",&ans);
+if(ans==16)
+    printf("\n  OH BOY ACED IT HOW ARE YOU SO SMART!! \n");
+
+
+else{
+    lyf=lyf-1;
+    printf("\n  LIFE REAMINING IS %d\n",lyf);
+    if(lyf==0){
+        lost();
+        exit(0);
+    }
+    else{goto Q3;}
+
+}
+
+}
+
+void Rome()
+{
+    printf("  ROME!");
+}
+
+void Alien()
+{
+    printf("  ALIEN");
+}
+void lost()
+{
+    Sleep(2000);
+    system("cls");
+    printf("GAME OVER BUDDY\n");
+
 }
