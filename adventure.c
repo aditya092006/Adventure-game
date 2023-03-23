@@ -118,6 +118,7 @@ void trex()
     printf("\n");
     printf("  ****************************************\n");
     scanf(" %c",&choice);
+    fflush(stdin);
     if(choice=='a')
     {
         printf("  Well Fighting a trex is a bad idea i guess You fought that big guy with a KITCHEN KNIFE! Obviously you lost the battle\n");
@@ -132,6 +133,7 @@ void trex()
     }
     else if(choice=='b')
     {
+
         printf("  Well you jump off that is the worst decision ever but I guess you have pretty solid luck\n  All of a sudden the time machine starts and you got teleported to a new era!\n");
         Sleep(500);
         printf("\n  PRESS ANY KEY TO CONTINUE\n");
@@ -141,6 +143,7 @@ void trex()
 
     else
     {
+
         printf("invalid input");
         Sleep(1000);
         system("cls");
@@ -194,7 +197,7 @@ else{
     printf("\n  LIFE REAMINING IS %d\n",lyf);
     if(lyf==0){
         lost();
-        exit(0);
+
     }
     else{goto Q1;}
 
@@ -212,7 +215,7 @@ else{
     printf("\n  LIFE REAMINING IS %d\n",lyf);
     if(lyf==0){
         lost();
-        exit(0);
+
     }
     else{goto Q2;}
 
@@ -230,7 +233,7 @@ else{
     printf("\n  LIFE REAMINING IS %d\n",lyf);
     if(lyf==0){
         lost();
-        exit(0);
+
     }
     else{goto Q3;}
 
@@ -245,12 +248,13 @@ void Rome()
 
 void Alien()
 {
-    printf("  ALIEN");
+    printf("  You were");
 }
 void lost()
 {
     Sleep(2000);
     system("cls");
     printf("GAME OVER BUDDY\n");
+    exit(0);
 
 }
