@@ -32,8 +32,8 @@ int main()
     system("cls"); // clrscr but give command to cmd as "cls" = clrscr
 
 
-    trex();
-    egypt();
+    //trex();
+    //egypt();
 
     Again:
 
@@ -248,8 +248,63 @@ void Rome()
 
 void Alien()
 {
-    printf("  You were");
+
+    char choice,cap[10]="capsule";
+    printf("  You were shifted to Alien era The sky was a vivid purple, the trees were tall and skinny, and the creatures that roamed the land were unlike anything she had ever seen before\n");
+    printf(" You saw a Human footprint now its time to make descion!!\n");
+    Sleep(1000);
+    printf("\n  ***************************************************************************************************************************************************\n");
+    printf("\n  a)Follow the foot prints\n");
+    printf("  b) Try communicating with aliens\n");
+    printf("\n  ***************************************************************************************************************************************************\n");
+    scanf(" %c",&choice);
+    fflush(stdin);
+
+    if(choice=='a')
+    {
+        Sleep(1000);
+        printf("  You followed the footprints and you saw a dead corpose, you were not able to identify who was it tho....\n");
+        printf("\n  ***************************************************************************************************************************************************\n");
+        printf("  a) Burn the corpse\n");
+        printf("  b) Loot the corpse\n");
+        printf("\n  ***************************************************************************************************************************************************\n");
+        scanf(" %c",&choice);
+        fflush(stdin);
+        if(choice=='a'|| choice=='A')
+        {
+            printf("  You try burning him but the alien insects feeding him attacked you\n");
+            lyf=lyf-1;
+            printf("  Life is remaining is %d\n",lyf);
+            if(lyf==0)
+            {
+                lost();
+            }
+            printf("  a alien came and saved you then he started taking you somewhere forcefully....");
+            Sleep(1000);
+        }
+        else if(choice=='b'||choice=='B')
+        {
+            printf("  When you looting the corpse a guard so you he immediately knocked you out by alien \n");
+            printf("  You woke and saw alien is dragging you somewhere you got panicked you try to break free but nothing works... \n");
+            Sleep(1000);
+        }
+        printf("  The aliens finally stops and gave you the blue capsule and ran away after seeing a BIG GIANT ALIEN!!\n");
+        printf("/n  That BIG!! alien starting taking you to a big building it looks like King...It was surprising that alien can speak English \n");
+        printf("/n  Our planet will be struck by asteroid if you can solve this question our ancient shield will be activated\n");
+        //game();
+
+
+
+    }
+
+    else if(choice=='b'||choice=='B')
+    {
+        printf("  You tried communicating with aliens they were not able to understand you have an idea\n");
+        printf("\n  ***************************************************************************************************************************************************\n");
+
+    }
 }
+
 void lost()
 {
     Sleep(2000);
