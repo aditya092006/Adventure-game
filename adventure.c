@@ -9,9 +9,11 @@ void egypt();
 void lost();
 void Rome();
 void Alien();
+void game();
 int main()
 {
     char choice;
+
     printf("\n");
     printf("  It's the year 2023 and now a scientist named Mr William sausage has created a time machine you are selected as a time");
     printf("\n");
@@ -32,8 +34,8 @@ int main()
     system("cls"); // clrscr but give command to cmd as "cls" = clrscr
 
 
-    //trex();
-    //egypt();
+    trex();
+    egypt();
 
     Again:
 
@@ -51,10 +53,12 @@ int main()
         Sleep(2000);
         system("cls");
         goto Again;
-    }
+
+
 
     return 0;
 
+}
 }
 
 void trex()
@@ -79,7 +83,7 @@ void trex()
 
     scanf(" %c",&choice);
 
-    if(choice=='a')
+    if(choice=='a'|| choice=='A')
     {
         printf("  The only weapon you had was a kitchen knife, you tried battling the dinosaur with a kitchen knife well,\n");
         printf("  ofc you were thrashed by a dinosaur and the amount of force lead you unconsciousness\n");
@@ -92,7 +96,7 @@ void trex()
         printf("\n");
 
     }
-    else if(choice=='b')
+    else if(choice=='b'|| choice=='B')
     {
         printf("  You started running T-rex keep following you you were so panicked and nervous\n");
         printf("  that you lost the trail the path you selected and guess what you reached the end of a cliff\n");
@@ -119,7 +123,7 @@ void trex()
     printf("  ****************************************\n");
     scanf(" %c",&choice);
     fflush(stdin);
-    if(choice=='a')
+    if(choice=='a'||choice=='A')
     {
         printf("  Well Fighting a trex is a bad idea i guess You fought that big guy with a KITCHEN KNIFE! Obviously you lost the battle\n");
         lyf = lyf-1;
@@ -131,7 +135,7 @@ void trex()
         system("cls");
 
     }
-    else if(choice=='b')
+    else if(choice=='b'||choice=='B')
     {
 
         printf("  Well you jump off that is the worst decision ever but I guess you have pretty solid luck\n  All of a sudden the time machine starts and you got teleported to a new era!\n");
@@ -253,6 +257,7 @@ void Alien()
     printf("  You were shifted to Alien era The sky was a vivid purple, the trees were tall and skinny, and the creatures that roamed the land were unlike anything she had ever seen before\n");
     printf(" You saw a Human footprint now its time to make descion!!\n");
     Sleep(1000);
+    Alien_start:
     printf("\n  ***************************************************************************************************************************************************\n");
     printf("\n  a)Follow the foot prints\n");
     printf("  b) Try communicating with aliens\n");
@@ -288,10 +293,13 @@ void Alien()
             printf("  You woke and saw alien is dragging you somewhere you got panicked you try to break free but nothing works... \n");
             Sleep(1000);
         }
-        printf("  The aliens finally stops and gave you the blue capsule and ran away after seeing a BIG GIANT ALIEN!!\n");
-        printf("/n  That BIG!! alien starting taking you to a big building it looks like King...It was surprising that alien can speak English \n");
-        printf("/n  Our planet will be struck by asteroid if you can solve this question our ancient shield will be activated\n");
-        //game();
+        else
+        {
+            printf("  invalid input\n");
+            Sleep(1000);
+
+            goto Alien_start;
+        }
 
 
 
@@ -299,8 +307,112 @@ void Alien()
 
     else if(choice=='b'||choice=='B')
     {
-        printf("  You tried communicating with aliens they were not able to understand you have an idea\n");
+        printf("  You tried communicating with aliens they were not able to understand you , You have an idea...\n");
+        a_start2:
         printf("\n  ***************************************************************************************************************************************************\n");
+        printf("  a) Try smacking them with your futuristic weapon and let them understand your point forcefully\n");
+        printf("  b) Try convincing them using hand signs\n");
+        printf("\n  ***************************************************************************************************************************************************\n");
+        scanf(" %c",&choice);
+        fflush(stdin);
+        if(choice=='a'||choice=='A')
+        {
+            printf("You smack the alien with kitchen knife there was no effect on it, The alien smacked you hard and lead you unconcious \n");
+
+        }
+        else if(choice=='b'||choice=='B')
+        {
+
+            printf("  You show them hand signs the alien got aggressive and start beating and injured you insanely and lead to unconscious\n");
+            lyf=lyf-1;
+            printf("\n  Life remaining is %d",lyf);
+            if(lyf==0)
+            {
+                lost();
+            }
+
+
+        }
+        else
+        {
+            printf("  invalid input\n");
+            Sleep(1000);
+            goto a_start2;
+        }
+
+
+
+    }
+        printf("  The aliens finally stops and gave you the blue capsule and ran away after seeing a BIG GIANT ALIEN!!\n");
+        printf("\n  That BIG!! alien starting taking you to a big building it looks like King...It was surprising that alien can speak English \n");
+        printf("\n  Our planet will be struck by asteroid if you can solve this question our ancient shield will be activated\n");
+        game();
+
+}
+
+void game()
+{
+
+    char choice;
+    system("cls");
+    system("color 01");
+    printf("ENTER TEXT COLOR\n");
+    printf("\n  ***************************************************************************************************************************************************\n");
+    printf("a) Blue\n");
+    printf("b) Red\n");
+    scanf(" %c",&choice);
+    printf("\n  ***************************************************************************************************************************************************\n");
+    if(choice=='a'||choice=='A')
+    {
+        printf("\n  BEEP BOOP BEEP SYSTEM GOT RIGHT NEXT\n");
+        Sleep(1000);
+    }
+    else if(choice=='b'||choice=='B')
+    {
+        printf("\n  YOU ARE MORE PATHETIC THAN US I WILL TAKE YOU ALL LIFES AHHH!\n");
+        Sleep(1000);
+        lost();
+
+    }
+    system("cls");
+    system("color 02");
+    printf("ENTER TEXT COLOR\n");
+    printf("\n  ***************************************************************************************************************************************************\n");
+    printf("a) Purple\n");
+    printf("b) Green\n");
+    scanf(" %c",&choice);
+    printf("\n  ***************************************************************************************************************************************************\n");
+    if(choice=='b'||choice=='B')
+    {
+        printf("\n  BEEP BOOP BEEP SYSTEM GOT RIGHT NEXT\n");
+        Sleep(1000);
+    }
+    else if(choice=='A'||choice=='a')
+    {
+        printf("\n  YOU ARE MORE PATHETIC THAN US I WILL TAKE YOU ALL LIFES AHHH!\n");
+        Sleep(1000);
+        lost();
+
+    }
+
+    system("cls");
+    system("color 06");
+    printf("ENTER TEXT COLOR\n");
+    printf("\n  ***************************************************************************************************************************************************\n");
+    printf("a) Blue\n");
+    printf("b) Yellow\n");
+    scanf(" %c",&choice);
+    printf("\n  ***************************************************************************************************************************************************\n");
+    if(choice=='b'||choice=='B')
+    {
+        printf("\n  BEEP BOOP BEEP SYSTEM GOT RIGHT NEXT\n");
+        Sleep(1000);
+    }
+    else if(choice=='A'||choice=='a')
+    {
+        printf("\n  YOU ARE MORE PATHETIC THAN US I WILL TAKE YOU ALL LIFES AHHH!\n");
+        Sleep(1000);
+        lost();
 
     }
 }
@@ -313,3 +425,8 @@ void lost()
     exit(0);
 
 }
+
+
+
+
+
