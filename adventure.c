@@ -247,13 +247,33 @@ else{
 
 void Rome()
 {
-    printf("  ROME!");
+    Rome:
+    char choice;
+    system("cls");
+    printf("  You finally arrived roman era, The bustling streets were filled with people, carts, and animals, and the air was thick with the scent of spices and cooking fires.\n");
+    printf("  \n***************************************************************************\n");
+    printf("  a) Explore market and look for something useful\n");
+    printf("  b) Interrogate some roman citizen to gather useful information\n");
+    printf("  \n***************************************************************************\n");
+    scanf(" %c",&choice);
+    fflush(stdin);
+
+    if(choice=='a'||choice=='A')
+    {
+        printf("   You explored the city, you were amazed by the incredible feats of engineering and architecture on display, from the towering aqueducts to the magnificent Colosseum\n");
+        printf("  All of the sudden, everyone bows their head and you saw a strong man riding on horse, now that man is approaching towards you\n");
+        printf("  That man said 'I guess you are new here you don't have atticates to bow you head in front of the warden\n");
+        printf("  Before you utter a word they thrashed you and take you to the king\n");
+
+    }
+
 }
 
 void Alien()
 {
 
-    char choice,cap[10]="capsule";
+    char choice;
+    system("cls");
     printf("  You were shifted to Alien era The sky was a vivid purple, the trees were tall and skinny, and the creatures that roamed the land were unlike anything she had ever seen before\n");
     printf(" You saw a Human footprint now its time to make descion!!\n");
     Sleep(1000);
@@ -268,7 +288,7 @@ void Alien()
     if(choice=='a')
     {
         Sleep(1000);
-        printf("  You followed the footprints and you saw a dead corpose, you were not able to identify who was it tho....\n");
+        printf("  You followed the footprints and you saw a dead corpse, you were not able to identify who was it tho....\n");
         printf("\n  ***************************************************************************************************************************************************\n");
         printf("  a) Burn the corpse\n");
         printf("  b) Loot the corpse\n");
