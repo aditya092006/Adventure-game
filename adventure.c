@@ -270,6 +270,41 @@ void Rome()
         printf("  Before you utter a word they thrashed you and take you to the king\n");
 
     }
+    if(choice=='B'||choice=='b')
+    {
+        printf("  you were wandering around looking at rich roman culture a local approaches you..\n");
+        printf("  Hey young man you look different are you from different country..\n");
+        printf("\n  ***************************************************************************\n");
+        printf(" \n  a) Disagree with him");
+        printf("  b) Tell him your whole story...");
+        printf("\n  ***************************************************************************\n");
+
+        fflush(stdin);
+        choice = getch();
+
+        if(choice=='A'|| choice=='a')
+        {
+
+            printf("\n Hah dont disagree with me i know you are lying i am great-grandson of the founder of rome i know romans nothing from heart!\n");
+            printf("  GUARDS!! CATCH THIS INTRUDER");
+            printf("\n Guards took you to the king....\n");
+        }
+        else if(choice=='b'||choice=='B')
+        {
+            printf("WHAT..YOU...YOU LIAR GURADS!! HELP!!..HE IS AN INTRUFER!");
+        }
+
+        printf("\n Guards took you to the king....\n");
+
+
+
+
+
+
+
+
+
+    }
 
 }
 
@@ -373,6 +408,9 @@ void Alien()
         printf("\n  That BIG!! alien starting taking you to a big building it looks like King...It was surprising that alien can speak English \n");
         printf("\n  Our planet will be struck by asteroid if you can solve this question our ancient shield will be activated\n");
         game();
+        printf("  wow thank you so much  we will help you send back in your time to repay your favour\n");
+        printf("  Your time machine was recovered.......you were sent back!!\n");
+        printf("  When you were sent back you saw a note on every corner in the world saying WE ALL TRIED MR WILLIAM'S SAUSAGE TIME MACHINE\n");
 
 }
 
