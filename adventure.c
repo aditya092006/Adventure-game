@@ -43,7 +43,8 @@ int main()
     printf("  \n***************************************************************************\n");
     printf("  a) Roman Era\n");
     printf("  b) Alien Era \n");
-    scanf(" %c",&choice);
+    fflush(stdin);
+    choice = getch();
     if(choice=='a')
         Rome();
     else if(choice=='b')
@@ -81,7 +82,8 @@ void trex()
     printf("\n");
     printf("  ***************************************************************************************\n");
 
-    scanf(" %c",&choice);
+    fflush(stdin);
+    choice = getch();
 
     if(choice=='a'|| choice=='A')
     {
@@ -121,8 +123,9 @@ void trex()
     printf("  b) JUMP OFF THE CLIFF\n");
     printf("\n");
     printf("  ****************************************\n");
-    scanf(" %c",&choice);
     fflush(stdin);
+    choice = getch();
+
     if(choice=='a'||choice=='A')
     {
         printf("  Well Fighting a trex is a bad idea i guess You fought that big guy with a KITCHEN KNIFE! Obviously you lost the battle\n");
@@ -247,7 +250,7 @@ else{
 
 void Rome()
 {
-    Rome:
+    //Rome:
     char choice;
     system("cls");
     printf("  You finally arrived roman era, The bustling streets were filled with people, carts, and animals, and the air was thick with the scent of spices and cooking fires.\n");
@@ -255,8 +258,9 @@ void Rome()
     printf("  a) Explore market and look for something useful\n");
     printf("  b) Interrogate some roman citizen to gather useful information\n");
     printf("  \n***************************************************************************\n");
-    scanf(" %c",&choice);
     fflush(stdin);
+    choice = getch();
+
 
     if(choice=='a'||choice=='A')
     {
@@ -282,8 +286,8 @@ void Alien()
     printf("\n  a)Follow the foot prints\n");
     printf("  b) Try communicating with aliens\n");
     printf("\n  ***************************************************************************************************************************************************\n");
-    scanf(" %c",&choice);
     fflush(stdin);
+    choice = getch();
 
     if(choice=='a')
     {
@@ -333,8 +337,10 @@ void Alien()
         printf("  a) Try smacking them with your futuristic weapon and let them understand your point forcefully\n");
         printf("  b) Try convincing them using hand signs\n");
         printf("\n  ***************************************************************************************************************************************************\n");
-        scanf(" %c",&choice);
+
         fflush(stdin);
+        choice = getch();
+
         if(choice=='a'||choice=='A')
         {
             printf("You smack the alien with kitchen knife there was no effect on it, The alien smacked you hard and lead you unconcious \n");
@@ -380,7 +386,9 @@ void game()
     printf("\n  ***************************************************************************************************************************************************\n");
     printf("a) Blue\n");
     printf("b) Red\n");
-    scanf(" %c",&choice);
+
+    fflush(stdin);
+    choice = getch();
     printf("\n  ***************************************************************************************************************************************************\n");
     if(choice=='a'||choice=='A')
     {
@@ -400,7 +408,9 @@ void game()
     printf("\n  ***************************************************************************************************************************************************\n");
     printf("a) Purple\n");
     printf("b) Green\n");
-    scanf(" %c",&choice);
+    fflush(stdin);
+    choice = getch();
+
     printf("\n  ***************************************************************************************************************************************************\n");
     if(choice=='b'||choice=='B')
     {
@@ -421,7 +431,9 @@ void game()
     printf("\n  ***************************************************************************************************************************************************\n");
     printf("a) Blue\n");
     printf("b) Yellow\n");
-    scanf(" %c",&choice);
+
+    fflush(stdin);
+    choice = getch();
     printf("\n  ***************************************************************************************************************************************************\n");
     if(choice=='b'||choice=='B')
     {
