@@ -43,7 +43,7 @@ int main()
     printf("  \n***************************************************************************\n");
     printf("  a) Roman Era\n");
     printf("  b) Alien Era \n");
-    fflush(stdin);
+
     choice = getch();
     if(choice=='a')
         Rome();
@@ -82,7 +82,7 @@ void trex()
     printf("\n");
     printf("  ***************************************************************************************\n");
 
-    fflush(stdin);
+
     choice = getch();
 
     if(choice=='a'|| choice=='A')
@@ -123,7 +123,7 @@ void trex()
     printf("  b) JUMP OFF THE CLIFF\n");
     printf("\n");
     printf("  ****************************************\n");
-    fflush(stdin);
+    fflush(stdout);
     choice = getch();
 
     if(choice=='a'||choice=='A')
@@ -250,8 +250,9 @@ else{
 
 void Rome()
 {
-    //Rome:
+
     char choice;
+    Rome_start:
     system("cls");
     printf("  You finally arrived roman era, The bustling streets were filled with people, carts, and animals, and the air was thick with the scent of spices and cooking fires.\n");
     printf("  \n***************************************************************************\n");
@@ -270,7 +271,7 @@ void Rome()
         printf("  Before you utter a word they thrashed you and take you to the king\n");
 
     }
-    if(choice=='B'||choice=='b')
+    else if(choice=='B'||choice=='b')
     {
         printf("  you were wandering around looking at rich roman culture a local approaches you..\n");
         printf("  Hey young man you look different are you from different country..\n");
@@ -287,14 +288,34 @@ void Rome()
 
             printf("\n Hah dont disagree with me i know you are lying i am great-grandson of the founder of rome i know romans nothing from heart!\n");
             printf("  GUARDS!! CATCH THIS INTRUDER");
-            printf("\n Guards took you to the king....\n");
+
         }
         else if(choice=='b'||choice=='B')
         {
             printf("WHAT..YOU...YOU LIAR GURADS!! HELP!!..HE IS AN INTRUFER!");
         }
+    }
+    else
+    {
+        printf(" INVALID INPUT!");
+        goto Rome_start;
+    }
 
         printf("\n Guards took you to the king....\n");
+        printf("  Oh you are from ottomans? their secret spy? well say the truth or get killed!\n");
+        printf("\n  ***************************************************************************\n");
+        printf("  a) Tell him the whole story......");
+        printf("  b) Disagree with him!");
+        printf("\n  ***************************************************************************\n");
+
+        choice=getch();
+
+        if(choice=='A'|| choice=='a')
+        {
+            printf("  oh you are the so called time traveler then help me to fix the wall...\n");
+            printf("  Send him to the slaves.....");
+
+        }
 
 
 
@@ -302,9 +323,6 @@ void Rome()
 
 
 
-
-
-    }
 
 }
 
@@ -373,7 +391,7 @@ void Alien()
         printf("  b) Try convincing them using hand signs\n");
         printf("\n  ***************************************************************************************************************************************************\n");
 
-        fflush(stdin);
+
         choice = getch();
 
         if(choice=='a'||choice=='A')
@@ -425,7 +443,6 @@ void game()
     printf("a) Blue\n");
     printf("b) Red\n");
 
-    fflush(stdin);
     choice = getch();
     printf("\n  ***************************************************************************************************************************************************\n");
     if(choice=='a'||choice=='A')
