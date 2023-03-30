@@ -425,7 +425,11 @@ void Alien()
         printf("  The aliens finally stops and gave you the blue capsule and ran away after seeing a BIG GIANT ALIEN!!\n");
         printf("\n  That BIG!! alien starting taking you to a big building it looks like King...It was surprising that alien can speak English \n");
         printf("\n  Our planet will be struck by asteroid if you can solve this question our ancient shield will be activated\n");
+        printf("  Wait you have the blue capsule it can be used for activating shield use the blue caspule and solve the puzzel\n");
+        printf("\n  enter key to continue\n");
+        getch();
         game();
+        system("cls");
         printf("  wow thank you so much  we will help you send back in your time to repay your favour\n");
         printf("  Your time machine was recovered.......you were sent back!!\n");
         printf("  When you were sent back you saw a note on every corner in the world saying WE ALL TRIED MR WILLIAM'S SAUSAGE TIME MACHINE\n");
