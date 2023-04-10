@@ -67,7 +67,7 @@ void trex()
 
     char choice;
     Sleep(1000);
-    printf("  You lost consciousness when consciousness returned you saw a T-REX ! is running towards you oh my lord you must react immediately \n");
+    printf("  You lost consciousness when consciousness returned you saw a T-REX ! is running towards you oh my lord you must react immediately! \n");
     printf("\n");
     Sleep(1000);
 
