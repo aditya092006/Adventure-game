@@ -3,6 +3,7 @@
 #include <windows.h>
 
 int lyf=3;
+FILE *fpoint;
 
 void trex();
 void egypt();
@@ -12,66 +13,96 @@ void Alien();
 void game();
 int main()
 {
-    char choice;
-
-    printf("\n");
-    printf("  It's the year 2023 and now a scientist named Mr William sausage has created a time machine you are selected as a time");
-    printf("\n");
-    Sleep(1000);
-    printf("  traveller but this machine is bounded with a magical spell if you die it will save you but it will save you for certian number of time ");
-
-    printf("\n");
-    printf("  Let's begin your journey please wear your seat belt,");
-    printf("\n");
-    Sleep(1000);
-    printf("\n *****************A FEW MOMENTS LATER ************ \n");
-    printf("\n");
-    Sleep(1000);
-    printf("  I guess we are out of energy we might stop during our journey, Emergency landing mode activated @#$@#$@# BEEEP BOOOOP BEEEP\n");
-    printf("\n  press a key to continue \n");
-    getch();
-
-    system("cls"); // clrscr but give command to cmd as "cls" = clrscr
 
 
-    trex();
-    egypt();
+    fpoint = fopen("save.txt","r");
+    char choice,temp='t';
+    if(fpoint==NULL)
+    {
+        printf("\n");
+        printf("  It's the year 2023 and now a scientist named Mr William sausage has created a time machine you are selected as a time");
+        printf("\n");
+        Sleep(1000);
+        printf("  traveller but this machine is bounded with a magical spell if you die it will save you but it will save you for certian number of time ");
 
-    Again:
+        printf("\n");
+        printf("  Let's begin your journey please wear your seat belt,");
+        printf("\n");
+        Sleep(1000);
+        printf("\n *****************A FEW MOMENTS LATER ************ \n");
+        printf("\n");
+        Sleep(1000);
+        printf("  I guess we are out of energy we might stop during our journey, Emergency landing mode activated @#$@#$@# BEEEP BOOOOP BEEEP\n");
+        printf("\n  press a key to continue \n");
+        getch();
 
-    printf("\n  I dont want you to stay here you are more smarter than i thought please leave this era i have my allies in Roman era and Alien era\n");
-    printf("  \n***************************************************************************\n");
-    printf("  a) Roman Era\n");
-    printf("  b) Alien Era \n");
-
-    choice = getch();
-    if(choice=='a')
-        Rome();
-    else if(choice=='b')
-        Alien();
-    else{
-        printf("  Invalid input\n");
-        Sleep(2000);
-        system("cls");
-        goto Again;
+        system("cls"); // clrscr but give command to cmd as "cls" = clrscr
 
 
+        fpoint = fopen("save.txt","w");
+        fprintf(fpoint,"%c",temp);
 
-    return 0;
+        printf("%c",*fpoint);
 
-}
+
+        if(fpoint=='t')
+        {
+            trex();
+        }
+        if(fpoint=='e')
+        {
+            egypt();
+        }
+
+Again:
+
+        printf("\n  I dont want you to stay here you are more smarter than i thought please leave this era i have my allies in Roman era and Alien era\n");
+        printf("  \n***************************************************************************\n");
+        printf("  a) Roman Era\n");
+        printf("  b) Alien Era \n");
+
+        choice = getch();
+
+        if(choice=='a' || fpoint=='r')
+        {
+
+            temp='r';
+            fpoint = fopen("save.txt","w");
+            fprintf(fpoint,"%c",temp);
+            Rome();
+        }
+        else if(choice=='b'|| fpoint=='a')
+        {
+            temp='a';
+            fpoint = fopen("save.txt","w");
+            fprintf(fpoint,"%c",temp);
+            Alien();
+        }
+        else
+        {
+            printf("  Invalid input\n");
+            Sleep(2000);
+            system("cls");
+            goto Again;
+
+
+
+            return 0;
+        }
+
+    }
 }
 
 void trex()
 {
 
-    char choice;
+    char choice,temp='e';
     Sleep(1000);
     printf("  You lost consciousness when consciousness returned you saw a T-REX ! is running towards you oh my lord you must react immediately! \n");
     printf("\n");
     Sleep(1000);
 
-    start:
+start:
 
     printf("  You have two options\n");
     printf("\n");
@@ -114,7 +145,7 @@ void trex()
     }
     printf("\n");
 
-    sub:
+sub:
 
     printf("  Now you have two options\n");
     printf("  ****************************************\n");
@@ -157,94 +188,115 @@ void trex()
         goto sub;
 
     }
+    fpoint = fopen("save.txt","w");
+    fprintf(fpoint,"%c",temp);
 }
 
 
 void egypt()
 {
+
     printf("\n  You travel to an unknown era but the place looks like Egyt assuming by looking at that HUGE pyramid \n");
     printf("\n");
     Sleep(1500);
     printf("\n");
 
-        int i,j,n=50,ans;
-        for(i=1;i<=n;i++){
-            for(j=1;j<=2*n-1;j++){
+    int i,j,n=50,ans;
+    for(i=1; i<=n; i++)
+    {
+        for(j=1; j<=2*n-1; j++)
+        {
 
-                    if(j>=n-(i-1) && j<=n+(i-1)){
-                        printf("*");
+            if(j>=n-(i-1) && j<=n+(i-1))
+            {
+                printf("*");
             }
             else
-            printf(" ");
+                printf(" ");
 
         }
         printf("\n");
     }
 
-printf("\n  you wandered around and suddenly a guard spotted you he made a different hand sign but u won't understand it very well\n");
-printf("  so you just shown a victory sign and started leaving the guard got raged he locked your hands and took you to the pyramid\n");
-printf("  He took you to the leader, surprisingly leader knew the modern language a bit so he asked you 3 quick math questions\n");
-printf("  if you can solve you will be set free or else you will lose 1 life in each wrong answer\n");
-printf("\n  PRESS ANY KEY TO CONTINUE\n");
-getch();
-system("cls");
+    printf("\n  you wandered around and suddenly a guard spotted you he made a different hand sign but u won't understand it very well\n");
+    printf("  so you just shown a victory sign and started leaving the guard got raged he locked your hands and took you to the pyramid\n");
+    printf("  He took you to the leader, surprisingly leader knew the modern language a bit so he asked you 3 quick math questions\n");
+    printf("  if you can solve you will be set free or else you will lose 1 life in each wrong answer\n");
+    printf("\n  PRESS ANY KEY TO CONTINUE\n");
+    getch();
+    system("cls");
 
-printf("  LETS BEGIN HAHAHAHA!! \n");
+    printf("  LETS BEGIN HAHAHAHA!! \n");
 
-printf("  *************************************************************************************************\n");
+    printf("  *************************************************************************************************\n");
 Q1:
-printf("\n  Q1 ) Look at this series: 53, 53, 40, 40, 27, 27,... What number should come next? \n");
-scanf(" %d",&ans);
-if(ans==14)
-    printf("\n  VERY WELL! time for new question \n");
+    printf("\n  Q1 ) Look at this series: 53, 53, 40, 40, 27, 27,... What number should come next? \n");
+    scanf(" %d",&ans);
+    if(ans==14)
+        printf("\n  VERY WELL! time for new question \n");
 
 
-else{
-    lyf=lyf-1;
-    printf("\n  LIFE REAMINING IS %d\n",lyf);
-    if(lyf==0){
-        lost();
+    else
+    {
+        lyf=lyf-1;
+        printf("\n  LIFE REAMINING IS %d\n",lyf);
+        if(lyf==0)
+        {
+            lost();
+
+        }
+        else
+        {
+            goto Q1;
+        }
 
     }
-    else{goto Q1;}
-
-}
 
 Q2:
-printf("\n  Q2)  WHAT IS 289*123? \n");
-scanf(" %d",&ans);
-if(ans==35547)
-    printf("\n  WAIT YOU USED CALCULATOR!!! WELL NVM NEXT QUESTION!!!! \n");
+    printf("\n  Q2)  WHAT IS 289*123? \n");
+    scanf(" %d",&ans);
+    if(ans==35547)
+        printf("\n  WAIT YOU USED CALCULATOR!!! WELL NVM NEXT QUESTION!!!! \n");
 
 
-else{
-    lyf=lyf-1;
-    printf("\n  LIFE REAMINING IS %d\n",lyf);
-    if(lyf==0){
-        lost();
+    else
+    {
+        lyf=lyf-1;
+        printf("\n  LIFE REAMINING IS %d\n",lyf);
+        if(lyf==0)
+        {
+            lost();
+
+        }
+        else
+        {
+            goto Q2;
+        }
 
     }
-    else{goto Q2;}
-
-}
 
 Q3:
-printf("\n last this one is easy what is 8/2(2+2)  \n");
-scanf(" %d",&ans);
-if(ans==16)
-    printf("\n  OH BOY ACED IT HOW ARE YOU SO SMART!! \n");
+    printf("\n last this one is easy what is 8/2(2+2)  \n");
+    scanf(" %d",&ans);
+    if(ans==16)
+        printf("\n  OH BOY ACED IT HOW ARE YOU SO SMART!! \n");
 
 
-else{
-    lyf=lyf-1;
-    printf("\n  LIFE REAMINING IS %d\n",lyf);
-    if(lyf==0){
-        lost();
+    else
+    {
+        lyf=lyf-1;
+        printf("\n  LIFE REAMINING IS %d\n",lyf);
+        if(lyf==0)
+        {
+            lost();
+
+        }
+        else
+        {
+            goto Q3;
+        }
 
     }
-    else{goto Q3;}
-
-}
 
 }
 
@@ -252,7 +304,7 @@ void Rome()
 {
 
     char choice;
-    Rome_start:
+Rome_start:
     system("cls");
     printf("  You finally arrived roman era, The bustling streets were filled with people, carts, and animals, and the air was thick with the scent of spices and cooking fires.\n");
     printf("  \n***************************************************************************\n");
@@ -301,21 +353,21 @@ void Rome()
         goto Rome_start;
     }
 
-        printf("\n Guards took you to the king....\n");
-        printf("  Oh you are from ottomans? their secret spy? well say the truth or get killed!\n");
-        printf("\n  ***************************************************************************\n");
-        printf("  a) Tell him the whole story......");
-        printf("  b) Disagree with him!");
-        printf("\n  ***************************************************************************\n");
+    printf("\n Guards took you to the king....\n");
+    printf("  Oh you are from ottomans? their secret spy? well say the truth or get killed!\n");
+    printf("\n  ***************************************************************************\n");
+    printf("  a) Tell him the whole story......");
+    printf("  b) Disagree with him!");
+    printf("\n  ***************************************************************************\n");
 
-        choice=getch();
+    choice=getch();
 
-        if(choice=='A'|| choice=='a')
-        {
-            printf("  oh you are the so called time traveler then help me to fix the wall...\n");
-            printf("  Send him to the slaves.....");
+    if(choice=='A'|| choice=='a')
+    {
+        printf("  oh you are the so called time traveler then help me to fix the wall...\n");
+        printf("  Send him to the slaves.....");
 
-        }
+    }
 
 
 
@@ -334,7 +386,7 @@ void Alien()
     printf("  You were shifted to Alien era The sky was a vivid purple, the trees were tall and skinny, and the creatures that roamed the land were unlike anything she had ever seen before\n");
     printf(" You saw a Human footprint now its time to make descion!!\n");
     Sleep(1000);
-    Alien_start:
+Alien_start:
     printf("\n  ***************************************************************************************************************************************************\n");
     printf("\n  a)Follow the foot prints\n");
     printf("  b) Try communicating with aliens\n");
@@ -385,7 +437,7 @@ void Alien()
     else if(choice=='b'||choice=='B')
     {
         printf("  You tried communicating with aliens they were not able to understand you , You have an idea...\n");
-        a_start2:
+a_start2:
         printf("\n  ***************************************************************************************************************************************************\n");
         printf("  a) Try smacking them with your futuristic weapon and let them understand your point forcefully\n");
         printf("  b) Try convincing them using hand signs\n");
@@ -422,17 +474,17 @@ void Alien()
 
 
     }
-        printf("  The aliens finally stops and gave you the blue capsule and ran away after seeing a BIG GIANT ALIEN!!\n");
-        printf("\n  That BIG!! alien starting taking you to a big building it looks like King...It was surprising that alien can speak English \n");
-        printf("\n  Our planet will be struck by asteroid if you can solve this question our ancient shield will be activated\n");
-        printf("  Wait you have the blue capsule it can be used for activating shield use the blue caspule and solve the puzzel\n");
-        printf("\n  enter key to continue\n");
-        getch();
-        game();
-        system("cls");
-        printf("  wow thank you so much  we will help you send back in your time to repay your favour\n");
-        printf("  Your time machine was recovered.......you were sent back!!\n");
-        printf("  When you were sent back you saw a note on every corner in the world saying WE ALL TRIED MR WILLIAM'S SAUSAGE TIME MACHINE\n");
+    printf("  The aliens finally stops and gave you the blue capsule and ran away after seeing a BIG GIANT ALIEN!!\n");
+    printf("\n  That BIG!! alien starting taking you to a big building it looks like King...It was surprising that alien can speak English \n");
+    printf("\n  Our planet will be struck by asteroid if you can solve this question our ancient shield will be activated\n");
+    printf("  Wait you have the blue capsule it can be used for activating shield use the blue caspule and solve the puzzel\n");
+    printf("\n  enter key to continue\n");
+    getch();
+    game();
+    system("cls");
+    printf("  wow thank you so much  we will help you send back in your time to repay your favour\n");
+    printf("  Your time machine was recovered.......you were sent back!!\n");
+    printf("  When you were sent back you saw a note on every corner in the world saying WE ALL TRIED MR WILLIAM'S SAUSAGE TIME MACHINE\n");
 
 }
 
