@@ -45,7 +45,7 @@ int main()
         printf("%c",*fpoint);
 
 
-        if(fpoint=='t')
+        if(fgetc(fpoint)=='t')
         {
             trex();
         }
