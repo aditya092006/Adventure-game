@@ -80,21 +80,21 @@ int main()
             for(i=0; i<10; i++)
             {
                 printf("RESOLVING ERROR.........................................................................");
-                system("COLOR 0F");
-                system("COLOR 1F");
-                system("COLOR 2F");
-                system("COLOR 3F");
-                system("COLOR 4F");
-                system("COLOR 5F");
-                system("COLOR 6F");
-                system("COLOR 7F");
-                system("COLOR 8F");
-                system("COLOR 9F");
-                system("COLOR AF");
-                system("COLOR BF");
-                system("COLOR CF");
-                system("COLOR DF");
-                system("COLOR EF");
+                system("COLOR F0");
+                system("COLOR 10");
+                system("COLOR 20");
+                system("COLOR 30");
+                system("COLOR 40");
+                system("COLOR 50");
+                system("COLOR 60");
+                system("COLOR 70");
+                system("COLOR 80");
+                system("COLOR 90");
+                system("COLOR A0");
+                system("COLOR B0");
+                system("COLOR C0");
+                system("COLOR D0");
+                system("COLOR E0");
             }
             system("COLOR 0F");
             printf("\n ******************************************************************************************************************************* \n");
@@ -468,7 +468,7 @@ r2:
 
     printf("\n");
     int i;
-    for(i=0; i<lyf;)
+    for(i=0;lyf==0;i++)
     {
         printf("\n you woke up the miniac was staring at you he killed you again!");
         printf("\n  Life remaining is %d",lyf);
