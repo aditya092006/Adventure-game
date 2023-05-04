@@ -39,17 +39,19 @@ int main()
         system("cls"); // clrscr but give command to cmd as "cls" = clrscr
 
 
+
         fpoint = fopen("save.txt","w");
         fprintf(fpoint,"%c",temp);
+    }
 
-        printf("%c",*fpoint);
+        //printf("%c",*fpoint);
 
 
         if(fgetc(fpoint)=='t')
         {
             trex();
         }
-        if(fpoint=='e')
+        if(fgetc(fpoint)=='e')
         {
             egypt();
         }
@@ -63,7 +65,7 @@ Again:
 
         choice = getch();
 
-        if(choice=='a' || fpoint=='r')
+        if(choice=='a' || fgetc(fpoint)=='t')
         {
 
             temp='r';
@@ -90,7 +92,7 @@ Again:
             return 0;
         }
 
-    }
+
 }
 
 void trex()
