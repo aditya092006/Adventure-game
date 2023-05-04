@@ -2,8 +2,10 @@
 #include <conio.h>
 #include <windows.h>
 
-int lyf=3;
+
 FILE *fpoint;
+FILE *flife;
+int lyf;
 
 void trex();
 void egypt();
@@ -21,21 +23,34 @@ int main()
 
     fpoint = fopen("op.txt","r");
 
+    flife = fopen("lyf.txt","r+");
+
+
     for(i=0; i<35; i++)
     {
         printf("\n");
     }
-    if(fpoint!=NULL)
+    if(fpoint!=NULL&&flife!=NULL)
     {
         printf("\t\t\t\t\t\t\t\t\t\t\tA) NEW GAME\n");
         printf("\t\t\t\t\t\t\t\t\t\t\tB) SAVED GAME\n");
 
         choice=getch();
 
+
         if(choice=='b'||choice=='B')
         {
             rewind(fpoint);
             ch = fgetc(fpoint);
+            fclose(fpoint);
+            rewind(flife);
+
+            fscanf(flife,"%d",&lyf);
+            perror("Error reading integer from file");
+            fclose(flife);
+
+
+
 
             if(ch=='t')
             {
@@ -56,8 +71,30 @@ int main()
         }
         else if(choice == 'a' || choice == 'A')
         {
-            system("color 0E");
+
+            int num;
             start:
+
+            system("cls");
+            printf("select difficulty");
+            printf("\n************************************************************************************************\n");
+            printf("1) EASY\n");
+            printf("2) Medium\n");
+            printf("3) Hard\n");
+            printf("\n***********************************************************************************************\n");
+            scanf("%d",&num);
+            if(num==1)
+            {
+                lyf = 5;
+            }
+            else if(num==2){
+                lyf= 3;
+            }
+            else{
+                lyf = 1;
+            }
+            system("color 0E");
+
             system("cls");
             printf("\n");
             printf("  It's the year 2023 and now a scientist named Mr William sausage has created a time machine you are selected as a time");
@@ -75,6 +112,8 @@ int main()
             printf("  I guess we are out of energy we might stop during our journey, Emergency landing mode activated @#$@#$@# BEEEP BOOOOP BEEEP\n");
             printf("\n  press a key to continue \n");
             getch();
+            remove("lyf.txt");
+            remove("op.txt");
 
             system("cls"); // clrscr but give command to cmd as "cls" = clrscr
             for(i=0; i<10; i++)
@@ -180,6 +219,9 @@ start:
         printf("  ofc you were thrashed by a dinosaur and the amount of force lead you unconsciousness\n");
 
         lyf=lyf-1;
+        flife = fopen("lyf.txt","w");
+        fprintf(flife,"%d",lyf);
+        fclose(flife);
         Sleep(1000);
         printf("\n  ************************* \n");
         printf("\n  Life remaining is %d\n",lyf);
@@ -219,6 +261,9 @@ sub:
     {
         printf("  Well Fighting a trex is a bad idea i guess You fought that big guy with a KITCHEN KNIFE! Obviously you lost the battle\n");
         lyf = lyf-1;
+        flife = fopen("lyf.txt","w");
+        fprintf(flife,"%d",lyf);
+        fclose(flife);
         printf("\n  Life remaining %d \n",lyf);
         Sleep(1000);
         printf("\n  When the T rex was almost there to eat you your time machine started Lucky guy you were shifted to new era\n");
@@ -302,6 +347,9 @@ Q1:
     {
         lyf=lyf-1;
         printf("\n  LIFE REAMINING IS %d\n",lyf);
+                flife = fopen("lyf.txt","w");
+        fprintf(flife,"%d",lyf);
+        fclose(flife);
         if(lyf==0)
         {
             lost();
@@ -325,6 +373,9 @@ Q2:
     {
         lyf=lyf-1;
         printf("\n  LIFE REAMINING IS %d\n",lyf);
+                flife = fopen("lyf.txt","w");
+        fprintf(flife,"%d",lyf);
+        fclose(flife);
         if(lyf==0)
         {
             lost();
@@ -348,6 +399,9 @@ Q3:
     {
         lyf=lyf-1;
         printf("\n  LIFE REAMINING IS %d\n",lyf);
+                flife = fopen("lyf.txt","w");
+        fprintf(flife,"%d",lyf);
+        fclose(flife);
         if(lyf==0)
         {
             lost();
@@ -506,7 +560,7 @@ Alien_start:
     fflush(stdin);
     choice = getch();
 
-    if(choice=='a')
+    if(choice=='a'|| choice == 'A')
     {
         Sleep(1000);
         printf("  You followed the footprints and you saw a dead corpse, you were not able to identify who was it tho....\n");
@@ -521,6 +575,9 @@ Alien_start:
             printf("  You try burning him but the alien insects feeding him attacked you\n");
             lyf=lyf-1;
             printf("  Life is remaining is %d\n",lyf);
+            flife= fopen("lyf.txt","w");
+        fprintf(flife,"%d",lyf);
+        fclose(flife);
             if(lyf==0)
             {
                 lost();
@@ -569,6 +626,9 @@ a_start2:
             printf("  You show them hand signs the alien got aggressive and start beating and injured you insanely and lead to unconscious\n");
             lyf=lyf-1;
             printf("\n  Life remaining is %d",lyf);
+            flife = fopen("lyf.txt","w");
+        fprintf(flife,"%d",lyf);
+        fclose(flife);
             if(lyf==0)
             {
                 lost();
@@ -597,6 +657,9 @@ a_start2:
     printf("  wow thank you so much  we will help you send back in your time to repay your favour\n");
     printf("  Your time machine was recovered.......you were sent back!!\n");
     printf("  When you were sent back you saw a note on every corner in the world saying WE ALL TRIED MR WILLIAM'S SAUSAGE TIME MACHINE\n");
+    remove("op.txt");
+    remove("lyf.txt");
+
 
 }
 
@@ -695,6 +758,7 @@ void lost()
 
     printf("GAME OVER BUDDY\n");
     remove("op.txt");
+    remove("lyf.txt");
 
 
     exit(0);
