@@ -11,92 +11,148 @@ void lost();
 void Rome();
 void Alien();
 void game();
+
+
 int main()
 {
+    system("COLOR 0B");
+    int i;
+    char choice,ch;
 
+    fpoint = fopen("op.txt","r");
 
-    fpoint = fopen("save.txt","r");
-    char choice,temp='t';
-    if(fpoint==NULL)
+    for(i=0; i<35; i++)
     {
         printf("\n");
-        printf("  It's the year 2023 and now a scientist named Mr William sausage has created a time machine you are selected as a time");
-        printf("\n");
-        Sleep(1000);
-        printf("  traveller but this machine is bounded with a magical spell if you die it will save you but it will save you for certian number of time ");
-
-        printf("\n");
-        printf("  Let's begin your journey please wear your seat belt,");
-        printf("\n");
-        Sleep(1000);
-        printf("\n *****************A FEW MOMENTS LATER ************ \n");
-        printf("\n");
-        Sleep(1000);
-        printf("  I guess we are out of energy we might stop during our journey, Emergency landing mode activated @#$@#$@# BEEEP BOOOOP BEEEP\n");
-        printf("\n  press a key to continue \n");
-        getch();
-
-        system("cls"); // clrscr but give command to cmd as "cls" = clrscr
-
-
-
-        fpoint = fopen("save.txt","w");
-        fprintf(fpoint,"%c",temp);
     }
+    if(fpoint!=NULL)
+    {
+        printf("\t\t\t\t\t\t\t\t\t\t\tA) NEW GAME\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\tB) SAVED GAME\n");
 
-        //printf("%c",*fpoint);
+        choice=getch();
 
-
-        if(fgetc(fpoint)=='t')
+        if(choice=='b'||choice=='B')
         {
-            trex();
+            rewind(fpoint);
+            ch = fgetc(fpoint);
+
+            if(ch=='t')
+            {
+                goto e1;
+            }
+            else if(ch=='e')
+            {
+                goto e2;
+            }
+            else if(ch=='r')
+            {
+                goto e3;
+            }
+            else if(ch=='a')
+            {
+                goto e4;
+            }
         }
-        if(fgetc(fpoint)=='e')
+        else if(choice == 'a' || choice == 'A')
         {
-            egypt();
-        }
-
-Again:
-
-        printf("\n  I dont want you to stay here you are more smarter than i thought please leave this era i have my allies in Roman era and Alien era\n");
-        printf("  \n***************************************************************************\n");
-        printf("  a) Roman Era\n");
-        printf("  b) Alien Era \n");
-
-        choice = getch();
-
-        if(choice=='a' || fgetc(fpoint)=='t')
-        {
-
-            temp='r';
-            fpoint = fopen("save.txt","w");
-            fprintf(fpoint,"%c",temp);
-            Rome();
-        }
-        else if(choice=='b'|| fpoint=='a')
-        {
-            temp='a';
-            fpoint = fopen("save.txt","w");
-            fprintf(fpoint,"%c",temp);
-            Alien();
-        }
-        else
-        {
-            printf("  Invalid input\n");
-            Sleep(2000);
+            system("color 0E");
+            start:
             system("cls");
-            goto Again;
+            printf("\n");
+            printf("  It's the year 2023 and now a scientist named Mr William sausage has created a time machine you are selected as a time");
+            printf("\n");
+            Sleep(1000);
+            printf("  traveller but this machine is bounded with a magical spell if you die it will save you but it will save you for certian number of time ");
+
+            printf("\n");
+            printf("  Let's begin your journey please wear your seat belt,");
+            printf("\n");
+            Sleep(1000);
+            printf("\n *****************A FEW MOMENTS LATER ************ \n");
+            printf("\n");
+            Sleep(1000);
+            printf("  I guess we are out of energy we might stop during our journey, Emergency landing mode activated @#$@#$@# BEEEP BOOOOP BEEEP\n");
+            printf("\n  press a key to continue \n");
+            getch();
+
+            system("cls"); // clrscr but give command to cmd as "cls" = clrscr
+            for(i=0; i<10; i++)
+            {
+                printf("RESOLVING ERROR.........................................................................");
+                system("COLOR 0F");
+                system("COLOR 1F");
+                system("COLOR 2F");
+                system("COLOR 3F");
+                system("COLOR 4F");
+                system("COLOR 5F");
+                system("COLOR 6F");
+                system("COLOR 7F");
+                system("COLOR 8F");
+                system("COLOR 9F");
+                system("COLOR AF");
+                system("COLOR BF");
+                system("COLOR CF");
+                system("COLOR DF");
+                system("COLOR EF");
+            }
+            system("COLOR 0F");
+            printf("\n ******************************************************************************************************************************* \n");
+            printf("\n ERROR NOT SOLVED EMERGENCY LANDING IN DINOSAUR ERA!\n");
+            printf("\n ******************************************************************************************************************************* \n");
+            Sleep(4000);
+            system("cls");
+
+            e1:
+            trex();
+            e2:
+            egypt();
 
 
+            Again:
 
-            return 0;
+            printf("\n  I dont want you to stay here you are more smarter than i thought please leave this era i have my allies in Roman era and Alien era\n");
+            printf("  \n***************************************************************************\n");
+            printf("  a) Roman Era\n");
+            printf("  b) Alien Era \n");
+
+            choice = getch();
+
+            if(choice=='a' || choice=='A')
+            {
+                e3:
+                Rome();
+            }
+            else if(choice=='b'|| choice=='B')
+            {
+                e4:
+                Alien();
+            }
+            else
+            {
+                printf("  Invalid input\n");
+                Sleep(2000);
+                system("cls");
+                goto Again;
+
+
+            }
         }
+    }
+    else
+    {
 
-
+        goto start;
+    }
+    return 0;
 }
 
 void trex()
-{
+{char ch='t';
+fpoint = fopen("op.txt", "w");
+fprintf(fpoint, "%c", ch);
+fclose(fpoint);
+system("cls");
 
     char choice,temp='e';
     Sleep(1000);
@@ -190,13 +246,17 @@ sub:
         goto sub;
 
     }
-    fpoint = fopen("save.txt","w");
-    fprintf(fpoint,"%c",temp);
+
 }
 
 
 void egypt()
-{
+{char ch='e';
+fpoint = fopen("op.txt", "w");
+fprintf(fpoint, "%c", ch);
+fclose(fpoint);
+system("cls");
+system("color 0A");
 
     printf("\n  You travel to an unknown era but the place looks like Egyt assuming by looking at that HUGE pyramid \n");
     printf("\n");
@@ -303,7 +363,12 @@ Q3:
 }
 
 void Rome()
-{
+{char ch='r';
+fpoint = fopen("op.txt", "w");
+fprintf(fpoint, "%c", ch);
+fclose(fpoint);
+system("cls");
+system("color 01");
 
     char choice;
 Rome_start:
@@ -313,7 +378,7 @@ Rome_start:
     printf("  a) Explore market and look for something useful\n");
     printf("  b) Interrogate some roman citizen to gather useful information\n");
     printf("  \n***************************************************************************\n");
-    fflush(stdin);
+
     choice = getch();
 
 
@@ -330,11 +395,11 @@ Rome_start:
         printf("  you were wandering around looking at rich roman culture a local approaches you..\n");
         printf("  Hey young man you look different are you from different country..\n");
         printf("\n  ***************************************************************************\n");
-        printf(" \n  a) Disagree with him");
+        printf("\n  a) Disagree with him");
         printf("  b) Tell him your whole story...");
         printf("\n  ***************************************************************************\n");
 
-        fflush(stdin);
+
         choice = getch();
 
         if(choice=='A'|| choice=='a')
@@ -356,20 +421,60 @@ Rome_start:
     }
 
     printf("\n Guards took you to the king....\n");
-    printf("  Oh you are from ottomans? their secret spy? well say the truth or get killed!\n");
+    printf(" Oh you are from ottomans? their secret spy? well say the truth or get killed!\n");
     printf("\n  ***************************************************************************\n");
     printf("  a) Tell him the whole story......");
-    printf("  b) Disagree with him!");
+    printf("\n  b) Disagree with him!");
     printf("\n  ***************************************************************************\n");
 
     choice=getch();
-
+r2:
     if(choice=='A'|| choice=='a')
     {
-        printf("  oh you are the so called time traveler then help me to fix the wall...\n");
-        printf("  Send him to the slaves.....");
+        printf("\n  oh you are the so called time traveler then help me to fix the wall...\n");
+        printf("  Send him to the slaves.....\n");
 
     }
+    else if(choice=='b'||choice=='B')
+    {
+        printf("  WHAT HOW DARE YOU DISAGREE WITH ME!...A LESSON NEVER DISAGREE WITH KING!!..........GAUARDS KILL HIM\n");
+        lost();
+    }
+    else
+    {
+        goto r2;
+    }
+
+    printf("\n when you were send to slaves you saw a miniac running towards with a knife his intention doset look good what you will do?\n");
+    printf("\n  ***************************************************************************\n");
+    printf("  a) Kill him! with your futuristic weapon!");
+    printf("\n  b) take a selfie with him!");
+    printf("\n  ***************************************************************************\n");
+    choice = getch();
+
+
+
+    if(choice=='a'|| choice=='A')
+    {
+        printf("he won he is miniac after all");
+        lyf--;
+        printf("Life remaining is %d\n",lyf);
+
+    }
+    else if(choice=='b'|| choice=='B')
+    {
+        printf("what on earth you were thinking the miniac stabbed you!!");
+    }
+
+    printf("\n");
+    int i;
+    for(i=0; i<lyf;)
+    {
+        printf("\n you woke up the miniac was staring at you he killed you again!");
+        printf("\n  Life remaining is %d",lyf);
+        lyf--;
+    }
+    lost();
 
 
 
@@ -381,7 +486,12 @@ Rome_start:
 }
 
 void Alien()
-{
+{char ch='a';
+fpoint = fopen("op.txt", "w");
+fprintf(fpoint, "%c", ch);
+fclose(fpoint);
+system("cls");
+system("color 05");
 
     char choice;
     system("cls");
@@ -493,6 +603,7 @@ a_start2:
 void game()
 {
 
+
     char choice;
     system("cls");
     system("color 01");
@@ -561,14 +672,32 @@ void game()
 
     }
 }
-
 void lost()
 {
+    int C;
+    fclose(fpoint);
     Sleep(2000);
+    system("COLOR 4f");
     system("cls");
-    printf("GAME OVER BUDDY\n");
-    exit(0);
+    printf("        xxxxx\n");
+    printf("       x     x\n");
+    printf("      x o o x\n");
+    printf("     x   v   x\n");
+    printf("    xx  xxx  xx\n");
+    printf("   x          x\n");
+    printf("   x  x    x  x\n");
+    printf("   x  x    x  x\n");
+    printf("    x x    x x\n");
+    printf("     x      x\n");
+    printf("      x    x\n");
+    printf("       xxx\n");
 
+
+    printf("GAME OVER BUDDY\n");
+    remove("op.txt");
+
+
+    exit(0);
 }
 
 
